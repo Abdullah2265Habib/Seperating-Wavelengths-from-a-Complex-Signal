@@ -27,3 +27,12 @@ freqs = np.fft.fftfreq(len(fft_vals), 1 / fs)
 positive_freqs = freqs[:len(freqs)//2]
 magnitude = np.abs(fft_vals[:len(fft_vals)//2])
 
+#frequency spectrum
+plt.stem(positive_freqs, magnitude, basefmt=" ")
+plt.title("Frequency Spectrum")
+plt.xlabel("Frequency (Hz)")
+plt.ylabel("Magnitude")
+plt.xlim(0, 100)
+plt.show()
+
+
