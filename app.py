@@ -19,3 +19,11 @@ plt.title("Complex Signal (Time Domain)")
 plt.xlabel("Time (s)")
 plt.ylabel("Amplitude")
 plt.show()
+
+#apply fourier transformation
+fft_vals = np.fft.fft(signal)
+freqs = np.fft.fftfreq(len(fft_vals), 1 / fs)
+
+positive_freqs = freqs[:len(freqs)//2]
+magnitude = np.abs(fft_vals[:len(fft_vals)//2])
+
